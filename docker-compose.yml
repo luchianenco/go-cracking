@@ -1,0 +1,9 @@
+app:
+  dockerfile: ./docker/Dockerfile
+  build: .
+  working_dir: /go/src/
+  volumes:
+    - ./src/main.go:/go/src/main.go
+    - ./src/app:/go/src/app
+  ports:
+    - 8080:8080
