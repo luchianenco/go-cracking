@@ -6,7 +6,9 @@ import (
 	"strconv"
 )
 
-const name = "Ex. 1.5: Compress string %s, result: %s";
+const name = "Ex. 1.5: Compress string %s, result: %s"
+
+var newArray []string
 
 func Execute(str string) {
 	res := main(str)
@@ -15,8 +17,7 @@ func Execute(str string) {
 }
 
 func main(str string) string {
-	var newArray []string
-	strArray := strings.Split(str, "");
+	strArray := strings.Split(str, "")
 	currentChar := strArray[0];
 	charCounter := 1
 
@@ -26,22 +27,20 @@ func main(str string) string {
 			continue
 		}
 
-		newArray = append(newArray, currentChar)
-
-		if charCounter > 1 {
-			newArray = append(newArray, strconv.Itoa(charCounter))
-		}
-
+		appendNewValues(currentChar, charCounter)
 		currentChar = strArray[i]
-		charCounter = 1;
+		charCounter = 1
 	}
 
+	appendNewValues(currentChar, charCounter)
+
+	return strings.Join(newArray, "")
+}
+
+func appendNewValues(currentChar string, counter int) {
 	newArray = append(newArray, currentChar)
 
-	if charCounter > 1 {
-		newArray = append(newArray, strconv.Itoa(charCounter))
+	if counter > 1 {
+		newArray = append(newArray, strconv.Itoa(counter))
 	}
-
-
-	return strings.Join(newArray, "");
 }
