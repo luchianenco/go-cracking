@@ -7,6 +7,7 @@ import (
 	"app/ex01_05"
 	"app/ex01_06"
 	"app/ex01_07"
+	"app/ex01_08"
 	"fmt"
 )
 
@@ -22,5 +23,6 @@ func main() {
 	ex01_05.Execute("aabbbbcccccfedddd")
 	ex01_06.Execute(matrix1)
 	ex01_07.Execute(matrix2)
+	ex01_08.Execute("basketball", "allb")
 	fmt.Println("Finished...")
 }

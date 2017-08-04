@@ -2,15 +2,15 @@ package ex01_03
 
 import (
 	"fmt"
-	"strings"
 	"sort"
+	"strings"
 )
 
 const name = "Ex. 1.3: The string \"%s\" %s permutation of string \"%s\"";
 
 func Execute(original string, permutation string) {
 
-	var result string;
+	var result string
 
 	res := main(original, permutation)
 
@@ -26,18 +26,18 @@ func Execute(original string, permutation string) {
 
 func main(original string, permutation string) bool {
 
-	if (len(original) != len(permutation)) {
-		return false;
-	}
-
-	originalArray := strings.Split(original, "");
-	permutationArray := strings.Split(permutation, "");
-	sort.Strings(permutationArray)
-	sort.Strings(originalArray)
-
-	if (strings.Join(permutationArray, "") != strings.Join(originalArray, "")) {
+	if len(original) != len(permutation) {
 		return false
 	}
 
-	return true;
+	originalArray := strings.Split(original, "")
+	permutationArray := strings.Split(permutation, "")
+	sort.Strings(permutationArray)
+	sort.Strings(originalArray)
+
+	if strings.Join(permutationArray, "") != strings.Join(originalArray, "") {
+		return false
+	}
+
+	return true
 }

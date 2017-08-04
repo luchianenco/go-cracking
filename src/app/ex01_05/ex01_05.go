@@ -2,8 +2,8 @@ package ex01_05
 
 import (
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 const name = "Ex. 1.5: Compress string %s, result: %s"
